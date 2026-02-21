@@ -14,6 +14,17 @@ public interface IBixiController {
      */
     void loadFile(String filePath);
 
+
+    /**
+     * @return total number of trips currently loaded in memory
+     */
+    int getTotalTripsLoaded();
+
+    /**
+     * @return number of unique stations considering both start and end stations
+     */
+    int getUniqueStationsLoaded();
+
     /**
      * Retrieves trips by station name and mode (start or end).
      * @param stationName
