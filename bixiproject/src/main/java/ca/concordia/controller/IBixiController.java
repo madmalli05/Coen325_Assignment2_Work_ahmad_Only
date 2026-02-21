@@ -4,6 +4,7 @@ import ca.concordia.model.Arrondissement;
 import ca.concordia.model.BixiStation;
 import ca.concordia.model.BixiTrip;
 import ca.concordia.model.RushHour;
+import ca.concordia.model.MonthComparison;
 
 public interface IBixiController {
 
@@ -12,6 +13,17 @@ public interface IBixiController {
      * @param filePath the path to the Bixi data file
      */
     void loadFile(String filePath);
+
+
+    /**
+     * @return total number of trips currently loaded in memory
+     */
+    int getTotalTripsLoaded();
+
+    /**
+     * @return number of unique stations considering both start and end stations
+     */
+    int getUniqueStationsLoaded();
 
     /**
      * Retrieves trips by station name and mode (start or end).
@@ -69,6 +81,13 @@ public interface IBixiController {
      */
     RushHour getRushHourOfMonth(int month);
 
-    //TODO define method for requirement 8 - define type of output
+    /**
+     * Compares two months by total trips, top K start/end stations and rush-hour stats.
+     * @param month1 first month (1-12)
+     * @param month2 second month (1-12)
+     * @param k number of top start/end stations
+     * @return comparison payload with one section per month
+     */
+    MonthComparison compareMonths(int month1, int month2, int k);
 
 }
