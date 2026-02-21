@@ -5,6 +5,7 @@ import ca.concordia.model.BixiStation;
 import ca.concordia.model.BixiTrip;
 import ca.concordia.model.RushHour;
 import ca.concordia.model.SimpleList;
+import ca.concordia.model.MonthComparison;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
